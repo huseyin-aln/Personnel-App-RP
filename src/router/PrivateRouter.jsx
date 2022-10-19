@@ -1,7 +1,17 @@
 import React from "react";
+import { Outlet, Navigate, useLocation } from "react-router-dom";
+import { toastWarnNotify } from "../helper/ToastNotify";
 
 const PrivateRouter = () => {
-  return <div>PrivateRouter</div>;
+  let currentUser = sessionStorage.getItem("username") || false;
+  let location = useLocation();
+
+  if (!currentUser) {
+    toastWarnNotify("You need to login first");
+    return <Navigate to="/" state={{ from: location }} replace />;
+  } else {
+    return <Outlet />;
+  }
 };
 
 export default PrivateRouter;

@@ -45,10 +45,11 @@ export default function DeparmentDetail() {
   const [data, setData] = React.useState();
   const [departmentId, setId] = React.useState();
   const navigate = useNavigate();
+
   const getDepartments = async () => {
     try {
       const res = await axios.get(
-        `https://anthonycw.pythonanywhere.com/api/department/${str}/`,
+        `http://127.0.0.1:8000/api/department/${str}/`,
         { headers: { Authorization: `Token ${myKey}` } }
       );
       console.log(res);
@@ -78,7 +79,7 @@ export default function DeparmentDetail() {
   const handleDelete = async (id) => {
     try {
       const res = await axios.delete(
-        `https://anthonycw.pythonanywhere.com/api/personal/${id}`,
+        `http://127.0.0.1:8000/api/personal/${id}`,
         { headers: { Authorization: `Token ${myKey}` } }
       );
       console.log(res);
@@ -95,7 +96,7 @@ export default function DeparmentDetail() {
 
   return (
     <div style={{ margin: "1rem" }}>
-      <h1>{str} Deparments Personal List</h1>
+      <h1>{str} Deparments Personel List</h1>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 550 }} aria-label="simple table">
           <TableHead>

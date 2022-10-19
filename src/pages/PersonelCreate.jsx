@@ -54,7 +54,7 @@ export default function PersonelCreate() {
     });
 
     let reqOptions = {
-      url: "https://anthonycw.pythonanywhere.com/api/personal/",
+      url: "http://127.0.0.1:8000/api/personal/",
       method: "POST",
       headers: headersList,
       data: bodyContent,
