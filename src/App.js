@@ -19,10 +19,10 @@ function App() {
       }}
     >
       <AuthContextProvider>
-        {/* <PersonelContextProvider> */}
-        <AppRouter />
-        <ToastContainer />
-        {/* </PersonelContextProvider> */}
+        <PersonelContextProvider>
+          <AppRouter />
+          <ToastContainer />
+        </PersonelContextProvider>
       </AuthContextProvider>
     </div>
   );
