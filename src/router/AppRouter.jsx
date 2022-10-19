@@ -5,7 +5,7 @@ import Register from "../pages/Register";
 import Home from "../pages/Home";
 import NavBar from "../components/Navbar";
 import DeparmentDetail from "../pages/DepartmentDetail";
-import PersonalCreate from "../pages/PersonalCreate";
+import PersonelCreate from "../pages/PersonelCreate";
 import PrivateRouter from "./PrivateRouter";
 
 const AppRouter = () => {
@@ -22,7 +22,7 @@ const AppRouter = () => {
           <Route path="" element={<DeparmentDetail />} />
         </Route>
         <Route path="/create-personal" element={<PrivateRouter />}>
-          <Route path="" element={<PersonalCreate />} />
+          <Route path="" element={<PersonelCreate />} />
         </Route>
       </Routes>
     </Router>
