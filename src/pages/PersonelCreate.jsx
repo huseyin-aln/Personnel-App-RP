@@ -10,7 +10,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useLocation, useNavigate } from "react-router-dom";
-// import { PersonelContext } from "../contexts/PersonelContext";
+import PersonelContext  from "../contexts/PersonelContext";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
@@ -38,19 +38,19 @@ export default function PersonelCreate() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     let headersList = {
-      Accept: "*/*",
-      Authorization: `Token ${myKey}`,
+      "Accept": "*/*",
+      "Authorization": `Token ${myKey}`,
       "Content-Type": "application/json",
     };
 
     let bodyContent = JSON.stringify({
-      first_name: firstName,
-      last_name: lastName,
-      is_staffed: isStaffed,
-      title: title,
-      gender: gender,
-      salary: salary,
-      department: departmentId,
+      "first_name": firstName,
+      "last_name": lastName,
+      "is_staffed": isStaffed,
+      "title": title,
+      "gender": gender,
+      "salary": salary,
+      "department": departmentId,
     });
 
     let reqOptions = {

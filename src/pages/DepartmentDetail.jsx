@@ -49,8 +49,8 @@ export default function DeparmentDetail() {
   const getDepartments = async () => {
     try {
       const res = await axios.get(
-        `https://benha.pythonanywhere.com/department/${str}/`,
-        { headers: { Authorization: `Token ${myKey}` } }
+        `https://benha.pythonanywhere.com/api/department/${str}/`,
+        { headers: { "Authorization": `Token ${myKey}` } }
       );
       console.log(res);
       const rows = res.data[0].departments.map((item, index) =>
@@ -80,7 +80,7 @@ export default function DeparmentDetail() {
     try {
       const res = await axios.delete(
         `https://benha.pythonanywhere.com/api/personal/${id}`,
-        { headers: { Authorization: `Token ${myKey}` } }
+        { headers: { "Authorization": `Token ${myKey}` } }
       );
       console.log(res);
       toastSuccessNotify("Staff deleted successfully!");
@@ -91,7 +91,7 @@ export default function DeparmentDetail() {
   };
   const handleEdit = () => {};
   const handleClick = () => {
-    navigate("/create-personal", { state: { departmentId } });
+    navigate("/create-personel", { state: { departmentId } });
   };
 
   return (
