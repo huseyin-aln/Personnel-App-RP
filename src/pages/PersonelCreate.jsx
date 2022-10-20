@@ -10,7 +10,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useLocation, useNavigate } from "react-router-dom";
-import { PersonelContext } from "../contexts/PersonelContext";
+// import { PersonelContext } from "../contexts/PersonelContext";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
@@ -54,7 +54,7 @@ export default function PersonelCreate() {
     });
 
     let reqOptions = {
-      url: "http://127.0.0.1:8000/api/personal/",
+      url: "https://benha.pythonanywhere.com/api/personal/",
       method: "POST",
       headers: headersList,
       data: bodyContent,
@@ -62,7 +62,7 @@ export default function PersonelCreate() {
 
     let response = await axios.request(reqOptions);
     if (response.status === 201) {
-      toastSuccessNotify("Personel başarıyla kaydedildi!");
+      toastSuccessNotify("Staff deleted successfully!");
       navigate(-1);
     }
     console.log(response.data);

@@ -22,7 +22,7 @@ export default function DepartmentTable() {
 
   const getDepartments = async (str) => {
     try {
-      const res = await axios.get(`http://127.0.0.1:8000/api/`, {
+      const res = await axios.get(`https://benha.pythonanywhere.com/`, {
         headers: { Authorization: `Token ${myKey}` },
       });
       const rows = res.data.map((item, index) =>

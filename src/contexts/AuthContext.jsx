@@ -1,10 +1,10 @@
 import axios from "axios";
-import { createContext, useDeferredValue, useState } from "react";
+import { createContext, useState } from "react";
 import { toastSuccessNotify } from "../helper/ToastNotify";
 
 export const AuthContext = createContext();
 
-const url = "http://127.0.0.1:8000/";
+const url = "https://benha.pythonanywhere.com/";
 
 const AuthContextProvider = (props) => {
   const [currentUser, setCurrentUser] = useState(
@@ -75,7 +75,7 @@ const AuthContextProvider = (props) => {
     try {
       var config = {
         method: "post",
-        url: "http://127.0.0.1:8000/users/auth/logouts/",
+        url: "https://benha.pythonanywhere.com/users/auth/logouts/",
         headers: {
           Authorization: `Token ${myKey}`,
         },

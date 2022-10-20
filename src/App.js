@@ -1,7 +1,7 @@
 import AppRouter from "./router/AppRouter";
 import AuthContextProvider from "./contexts/AuthContext";
 import { ToastContainer } from "react-toastify";
-import PersonelContextProvider from "./contexts/PersonelContext";
+// import PersonelContextProvider from "./contexts/PersonelContext";
 
 function App() {
   return (

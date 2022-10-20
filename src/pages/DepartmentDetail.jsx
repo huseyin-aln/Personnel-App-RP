@@ -49,7 +49,7 @@ export default function DeparmentDetail() {
   const getDepartments = async () => {
     try {
       const res = await axios.get(
-        `http://127.0.0.1:8000/api/department/${str}/`,
+        `https://benha.pythonanywhere.com/department/${str}/`,
         { headers: { Authorization: `Token ${myKey}` } }
       );
       console.log(res);
@@ -79,14 +79,14 @@ export default function DeparmentDetail() {
   const handleDelete = async (id) => {
     try {
       const res = await axios.delete(
-        `http://127.0.0.1:8000/api/personal/${id}`,
+        `https://benha.pythonanywhere.com/api/personal/${id}`,
         { headers: { Authorization: `Token ${myKey}` } }
       );
       console.log(res);
-      toastSuccessNotify("Personel başarıyla silindi!");
+      toastSuccessNotify("Staff deleted successfully!");
       getDepartments();
     } catch (error) {
-      toastErrorNotify("Bu işlemi yapabilmen için daha çok çalışman lazım");
+      toastErrorNotify("Something wetn wrong!");
     }
   };
   const handleEdit = () => {};
@@ -163,8 +163,7 @@ export default function DeparmentDetail() {
           onClick={handleClick}
           sx={{ backgroundColor: "darkslategray", color: "white" }}
         >
-          {" "}
-          Add Personal
+          Add Personel
         </TableCell>
       )}
     </div>

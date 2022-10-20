@@ -46,7 +46,7 @@ export default function NavBar() {
             style={{ marginLeft: "0px" }}
             onClick={() => navigate("/home")}
           >
-            Clarusway's Personal List App
+            Personel List App
           </Typography>
           {currentUser ? (
             <Typography
