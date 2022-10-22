@@ -8,9 +8,13 @@ const PrivateRouter = () => {
 
   if (!currentUser) {
     toastWarnNotify("You need to login first");
-    return <Navigate to="/" state={{ from: location }} replace />;
+    return (
+      <Navigate to="/" state={{ from: location }} replace />
+    );
   } else {
-    return <Outlet />;
+    return (
+      <Outlet />
+    );
   }
 };
 

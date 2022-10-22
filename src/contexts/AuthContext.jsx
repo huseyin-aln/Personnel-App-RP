@@ -1,10 +1,10 @@
 import axios from "axios";
-import { createContext, useDeferredValue, useState } from "react";
+import { createContext, useState } from "react";
 import { toastSuccessNotify } from "../helper/ToastNotify";
 
 export const AuthContext = createContext();
 
-const url = "https://benha.pythonanywhere.com/";
+const url = "http://benha.pythonanywhere.com/";
 
 const AuthContextProvider = (props) => {
   const [currentUser, setCurrentUser] = useState(
@@ -23,12 +23,12 @@ const AuthContextProvider = (props) => {
   ) => {
     try {
       const res = await axios.post(`${url}users/auth/register/`, {
-        "username": userName,
-        "email": email,
-        "first_name": firstName,
-        "last_name": lastName,
-        "password": password,
-        "password2": password,
+        username: userName,
+        email: email,
+        first_name: firstName,
+        last_name: lastName,
+        password: password,
+        password2: password,
       });
 
       if (res.data.token) {
@@ -50,9 +50,9 @@ const AuthContextProvider = (props) => {
     try {
       console.log(email);
       const res = await axios.post(`${url}users/auth/login/`, {
-        "email": email,
-        "username": userName,
-        "password": password,
+        email: email,
+        username: userName,
+        password: password,
       });
       console.log(res);
       if (res.data.key) {
@@ -75,7 +75,7 @@ const AuthContextProvider = (props) => {
     try {
       var config = {
         method: "post",
-        url: "https://benha.pythonanywhere.com/users/auth/logouts/",
+        url: "http://benha.pythonanywhere.com/users/auth/logouts/",
         headers: {
           Authorization: `Token ${myKey}`,
         },

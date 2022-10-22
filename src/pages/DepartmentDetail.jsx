@@ -49,7 +49,7 @@ export default function DeparmentDetail() {
   const getDepartments = async () => {
     try {
       const res = await axios.get(
-        `https://benha.pythonanywhere.com/api/department/${str}/`,
+        `http://benha.pythonanywhere.com/api/department/${str}/`,
         { headers: { "Authorization": `Token ${myKey}` } }
       );
       console.log(res);
@@ -79,7 +79,7 @@ export default function DeparmentDetail() {
   const handleDelete = async (id) => {
     try {
       const res = await axios.delete(
-        `https://benha.pythonanywhere.com/api/personal/${id}`,
+        `http://benha.pythonanywhere.com/api/personal/${id}`,
         { headers: { "Authorization": `Token ${myKey}` } }
       );
       console.log(res);

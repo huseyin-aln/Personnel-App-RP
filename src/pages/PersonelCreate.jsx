@@ -10,7 +10,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useLocation, useNavigate } from "react-router-dom";
-import PersonelContext  from "../contexts/PersonelContext";
+// import PersonelContext  from "../contexts/PersonelContext";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
@@ -54,7 +54,7 @@ export default function PersonelCreate() {
     });
 
     let reqOptions = {
-      url: "https://benha.pythonanywhere.com/api/personal/",
+      url: "http://benha.pythonanywhere.com/api/personal/",
       method: "POST",
       headers: headersList,
       data: bodyContent,
