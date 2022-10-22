@@ -23,12 +23,12 @@ const AuthContextProvider = (props) => {
   ) => {
     try {
       const res = await axios.post(`${url}users/auth/register/`, {
-        username: userName,
-        email: email,
-        first_name: firstName,
-        last_name: lastName,
-        password: password,
-        password2: password,
+        "username": userName,
+        "email": email,
+        "first_name": firstName,
+        "last_name": lastName,
+        "password": password,
+        "password2": password,
       });
 
       if (res.data.token) {
@@ -50,9 +50,9 @@ const AuthContextProvider = (props) => {
     try {
       console.log(email);
       const res = await axios.post(`${url}users/auth/login/`, {
-        email: email,
-        username: userName,
-        password: password,
+        "email": email,
+        "username": userName,
+        "password": password,
       });
       console.log(res);
       if (res.data.key) {
